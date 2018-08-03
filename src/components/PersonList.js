@@ -11,7 +11,7 @@ class PersonList extends Component {
                         key={index}
                     >
                         <PersonProfile
-                            name={data.name.first}
+                            name={data.name}
                             picURL={data.picture.thumbnail}
                             city={data.location.city}
                             age={data.dob.age}
