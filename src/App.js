@@ -35,6 +35,7 @@ class App extends Component {
           arrayUsers: [data.results]
         });
       });
+
   }
 
   render() {
