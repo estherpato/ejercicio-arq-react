@@ -7,23 +7,11 @@ class App extends Component {
     super(props)
 
     this.state = {
-<<<<<<< HEAD
-      user: {
-        name: '',
-        pic: '',
-        city: '',
-        age: '',
-        gender: ''
-      },
-
-=======
->>>>>>> 7fa1197d4dbdb46db112f6f2784677fa96d15855
       arrayUsers: [],
     }
 
     this.fetchRandomUser()
 
-    this.metodoRandom = this.metodoRandom.bind(this)
   }
 
   // name: `${name.title} ${name.first} ${name.last}`,
@@ -40,7 +28,7 @@ class App extends Component {
 
       .then((json) => {
         this.setState({
-          arrayUsers: [data.results]
+          arrayUsers: json.results
         });
       });
 
