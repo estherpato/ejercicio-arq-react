@@ -7,18 +7,12 @@ class App extends Component {
     super(props)
 
     this.state = {
-      user: {
-        name: '',
-        pic: '',
-        city: '',
-        age: '',
-        gender: ''
-      },
-
-      arrayUsers: '',
+      arrayUsers: [],
     }
 
     this.fetchRandomUser()
+
+    this.metodoRandom = this.metodoRandom.bind(this)
   }
 
   // name: `${name.title} ${name.first} ${name.last}`,
@@ -29,22 +23,26 @@ class App extends Component {
 
   fetchRandomUser() {
     fetch('https://randomuser.me/api/?results=50')
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => {
+        return response.json();
+      })
+
+      .then((json) => {
         this.setState({
-          arrayUsers: data.results
-        });
-      });
+          arrayUsers: json.results
+        }, this.metodoRandom);
+      })
+  }
+
+  metodoRandom() {
+    console.log('hola', this.state.arrayUsers.gender)
   }
 
   render() {
-    const arrayUsers = this.state.arrayUsers
-
     return (
       <div className="App">
         <PersonList
-          // userInfo={user}
-          // array={results}
+         
         />
       </div>
     );

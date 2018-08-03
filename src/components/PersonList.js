@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import PersonProfile from './PersonProfile';
+// import PersonProfile from './PersonProfile';
 
 class PersonList extends Component {
     render() {
-        const { userInfo, array } = this.props
-
+        const array = this.props.array
         return (
-            <ul>
-                {/* {array.map((data, index) =>
+            <p>{array}</p>
+            
+                /* {array.map((data, index) =>
                     <li
                         key={index}
                     >
@@ -19,8 +19,8 @@ class PersonList extends Component {
                             gender={data.gender}
                         />
                     </li>
-                )} */}
-            </ul>
+                )} */
+            
         );
     }
 }
