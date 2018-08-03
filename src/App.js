@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import Child from './components/Child';
 import './App.css';
 import PersonList from './components/PersonList';
 
@@ -14,14 +16,8 @@ class App extends Component {
 
   }
 
-  // name: `${name.title} ${name.first} ${name.last}`,
-  // pic: picture.thumbnail,
-  // city: location.city,
-  // age: dob.age,
-  // gender: gender,
-
   fetchRandomUser() {
-    fetch('https://randomuser.me/api/?results=50')
+    fetch('https://randomuser.me/api/?results=10')
       .then(response => {
         return response.json();
       })
@@ -40,7 +36,13 @@ class App extends Component {
         <PersonList
           array={this.state.arrayUsers}
         />
+        <main>
+          <Switch>
+            <Route path='/child/:index' component={Child}></Route>
+          </Switch>
+        </main>
       </div>
+
     );
   }
 }

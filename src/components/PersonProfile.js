@@ -13,7 +13,7 @@ class PersonProfile extends Component {
         return (
             <div>
                 <h1>{`${name.title} ${name.first} ${name.last}`}</h1>
-                <img src={picURL} alt={name} />
+                <img src={picURL} alt={name.first} />
                 <p>{city}</p>
                 <p>{age}</p>
                 <p>{gender}</p>
