@@ -7,6 +7,7 @@ class App extends Component {
     super(props)
 
     this.state = {
+<<<<<<< HEAD
       user: {
         name: '',
         pic: '',
@@ -15,10 +16,14 @@ class App extends Component {
         gender: ''
       },
 
+=======
+>>>>>>> 7fa1197d4dbdb46db112f6f2784677fa96d15855
       arrayUsers: [],
     }
 
     this.fetchRandomUser()
+
+    this.metodoRandom = this.metodoRandom.bind(this)
   }
 
   // name: `${name.title} ${name.first} ${name.last}`,
@@ -29,8 +34,11 @@ class App extends Component {
 
   fetchRandomUser() {
     fetch('https://randomuser.me/api/?results=50')
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => {
+        return response.json();
+      })
+
+      .then((json) => {
         this.setState({
           arrayUsers: [data.results]
         });
