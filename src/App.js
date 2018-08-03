@@ -15,7 +15,7 @@ class App extends Component {
         gender: ''
       },
 
-      arrayUsers: '',
+      arrayUsers: [],
     }
 
     this.fetchRandomUser()
@@ -32,19 +32,16 @@ class App extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          arrayUsers: data.results
+          arrayUsers: [data.results]
         });
       });
   }
 
   render() {
-    const arrayUsers = this.state.arrayUsers
-
     return (
       <div className="App">
         <PersonList
-          // userInfo={user}
-          // array={results}
+          array={this.state.arrayUsers}
         />
       </div>
     );

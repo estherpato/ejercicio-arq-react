@@ -3,23 +3,23 @@ import PersonProfile from './PersonProfile';
 
 class PersonList extends Component {
     render() {
-        const { userInfo, array } = this.props
-
+        console.log(this.props.array)
         return (
+            
             <ul>
-                {/* {array.map((data, index) =>
+                {this.props.array.map((data, index) =>
                     <li
                         key={index}
                     >
                         <PersonProfile
-                            name={data.name}
-                            picURL={data.pic}
-                            city={data.city}
-                            age={data.age}
-                            gender={data.gender}
+                            name={data.gender}
+                            // picURL={data.pic}
+                            // city={data.city}
+                            // age={data.age}
+                            // gender={data.gender}
                         />
                     </li>
-                )} */}
+                )}
             </ul>
         );
     }
